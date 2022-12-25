@@ -22,6 +22,8 @@ public class PackageEntity extends BaseEntity {
     private Integer packageSeq;
 
     private String packageName;
+
     private Integer count;
+
     private Integer period;
 }
