@@ -30,4 +30,7 @@ public class PassEntity extends BaseEntity {
 
     private Integer remainingCount;
 
+    private LocalDateTime startedAt;
+    private LocalDateTime endedAt;
+    private LocalDateTime expiredAt;
 }
