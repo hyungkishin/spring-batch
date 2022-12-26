@@ -1,11 +1,13 @@
 package com.pass.passbatch.repository.pass;
 
-import com.pass.passbatch.repository.BaseEntity;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,21 +18,19 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 @Entity
-@Table(name = "pass")
-public class PassEntity extends BaseEntity {
+@Table(name = "bulk_pass")
+public class BulkPassEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 기본 키 생성을 DB에 위임합니다. (AUTO_INCREMENT)
-    private Integer passSeq;
-
+    private Integer bulkPassSeq;
     private Integer packageSeq;
+    private String userGroupId;
 
-    private String userId;
-
-    private PassStatus status;
-
-    private Integer remainingCount;
+    @Enumerated(EnumType.STRING)
+    private BulkPassStatus status;
+    private Integer count;
 
     private LocalDateTime startedAt;
     private LocalDateTime endedAt;
-    private LocalDateTime expiredAt;
+
 }
