@@ -18,6 +18,10 @@ spring:
       # 초기 수행한 이후에는 꺼두어도 됩니다.
       initialize-schema: always
 
-logging:
-  level:
-    org.hibernate.type.descriptor.sql: off # ????? ?? ????? ????.
+kakaotalk:
+  host: https://kapi.kakao.com
+  token: 44e31128eecc9166870109eb5838c691
+
+#logging:
+#  level:
+#    org.hibernate.type.descriptor.sql: off
